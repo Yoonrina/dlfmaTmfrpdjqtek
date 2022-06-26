@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>누르면 멘챠가 어쩌고</title>
+  <style>
+    *{margin: 0;padding: 0;border: 0;}
+    ul{list-style: none;}
+    button{background-color: transparent;border: none;cursor: pointer;}
+    .container{
+      margin-top: 100px;
+    }
+    .container div{
+      margin-top: 30px;
+      text-align: center;
+    }
+    .mencha-wrap{
+      height: 217px;
+      background: rgb(38, 165, 87);
+    }
+    .color-select ul{
+      width: 50%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">
+      레몬을 누르면 멘챠가 색깔을 입어용
+    </div>
+
+    <div class="mencha-wrap">
+      <img src="img/a0.png" class="mencha">
+    </div>
+
+    <div class="color-select">
+      <ul>
+        <li>
+          <button type="button" class="color">
+            <img src="img/0.png" alt="">
+          </button>
+        </li>
+        <li>
+          <button type="button" class="color">
+            <img src="img/1.png" alt="">
+          </button>
+        </li>
+        <li>
+          <button type="button" class="color">
+            <img src="img/2.png" alt="">
+          </button>
+        </li>
+        <li>
+          <button type="button" class="color">
+            <img src="img/3.png" alt="">
+          </button>
+        </li>
+        <li>
+          <button type="button" class="color">
+            <img src="img/4.png" alt="">
+          </button>
+        </li>
+        <li>
+          <button type="button" class="color">
+            <img src="img/5.png" alt="">
+          </button>
+        </li>
+        <li>
+          <button type="button" class="color">
+            <img src="img/6.png" alt="">
+          </button>
+        </li>
+        <li>
+          <button type="button" class="color">
+            <img src="img/7.png" alt="">
+          </button>
+        </li>
+        <li>
+          <button type="button" class="color">
+            <img src="img/8.png" alt="">
+          </button>
+        </li>
+        <li>
+          <button type="button" class="color">
+            <img src="img/9.png" alt="">
+          </button>
+        </li>
+        <li>
+          <button type="button" class="color">
+            <img src="img/10.png" alt="">
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    const mencha = document.querySelectorAll('.mencha');
+    const colorBtn = document.querySelectorAll('.color');
+    var colorM = ['a0', 'a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10'];
+    
+    
+    for(let i=0; i<colorBtn.length; i++){
+      colorBtn[i].addEventListener('click', function(){
+        mencha[0].src = "img/"+colorM[i]+".png"
+      });
+    }
+
+    // .src -> 제이쿼리의 .attr('src') 이거인듯
+    // 반복문의 i를 넣으니 레몬버튼과 멘챠의 색깔 순서가 동일해졌음(array넣은거)
+    
+/*  
+    *노가다는 손이 힘들다*
+
+    colorBtn[0].addEventListener('click', function(){
+        mencha[0].src = "img/a0.png"
+    });
+    colorBtn[1].addEventListener('click', function(){
+        mencha[0].src = "img/a1.png"
+    });
+    colorBtn[2].addEventListener('click', function(){
+        mencha[0].src = "img/a2.png"
+    });
+*/
+
+    mencha[0].style.mixBlendMode = 'multiply';
+  </script>
+</body>
+</html>
